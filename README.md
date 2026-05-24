@@ -4,6 +4,7 @@ Table of contents
 2. [How is ansible agentless ?](#ansible-is-agentless)
 3. [How is ansible modules built?](#how-is-ansible-modules-built?)
 4. [What is Playbooks in Ansible ?](#what-is-playbooks-in-ansible)
+4. [What is Inventories in Ansible ?](#what-is-inventories-in-ansible)
 
 
 ## what-is-ansible
@@ -39,3 +40,7 @@ Eg of Ansible playbooks
         name: nginx
         state: started
 ```
+
+## what-is-inventories-in-ansible
+
+An inventory defines a collection of hosts that Ansible manages. These hosts can also be assigned to groups, which can be managed collectively. Groups can contain child groups, and hosts can be members of multiple groups. The inventory can also set variables that apply to the hosts and groups that it defines.

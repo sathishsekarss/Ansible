@@ -5,7 +5,9 @@ Table of contents
 3. [How is ansible modules built?](#how-is-ansible-modules-built?)
 4. [What is Playbooks in Ansible ?](#what-is-playbooks-in-ansible)
 5. [What is Inventories in Ansible ?](#what-is-inventories-in-ansible)
-5. [What is Ansible navigator ?](#what-is-ansible-navigator)
+6. [What is Ansible navigator ?](#what-is-ansible-navigator)
+7. [What is Ansible navigator ?](#what-is-ansible-navigator)
+8. [How to configure ansible configuration ?](#how-to-configure-ansible-configuration)
 
 
 ## what-is-ansible
@@ -55,3 +57,24 @@ It acts as a modern interface for working with:
 - Collections
 - Inventories
 - Execution Environments (containers with Ansible preinstalled)
+
+## how-to-configure-ansible-configuration
+You can create an ansible.cfg file in your Ansible project's directory to apply settings that apply to multiple Ansible tools.
+
+The Ansible configuration file consists of several sections, with each section containing settings defined as key-value pairs. Section titles are enclosed in square brackets.
+
+For example:
+
+```
+[defaults]
+inventory = ./inventory
+remote_user = user
+ask_pass = false
+
+[privilege_escalation]
+become = true
+become_method = sudo
+become_user = root
+become_ask_pass = false
+```
+

@@ -8,6 +8,7 @@ Table of contents
 6. [What is Ansible navigator ?](#what-is-ansible-navigator)
 7. [What is Ansible navigator ?](#what-is-ansible-navigator)
 8. [How to configure ansible configuration ?](#how-to-configure-ansible-configuration)
+9. [What is ansible facts ?](#what-is-ansible-facts)
 
 
 ## what-is-ansible
@@ -78,3 +79,7 @@ become_user = root
 become_ask_pass = false
 ```
 
+## what-is-ansible-facts
+In Ansible, facts are pieces of information automatically collected about a managed host before tasks run.
+
+eg.  OS type, IP address, CPU details, Memory, Hostname, Network interfaces etc.

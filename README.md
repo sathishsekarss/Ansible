@@ -9,6 +9,7 @@ Table of contents
 7. [What is Ansible navigator ?](#what-is-ansible-navigator)
 8. [How to configure ansible configuration ?](#how-to-configure-ansible-configuration)
 9. [What is ansible facts ?](#what-is-ansible-facts)
+10. [Variables in ansible playbook](#variables-in-ansible-playbook)
 
 
 ## what-is-ansible
@@ -83,3 +84,27 @@ become_ask_pass = false
 In Ansible, facts are pieces of information automatically collected about a managed host before tasks run.
 
 eg.  OS type, IP address, CPU details, Memory, Hostname, Network interfaces etc.
+
+## variables-in-ansible-playbook
+In Ansible, variables are used to store values that can be reused throughout a playbook, making your automation more flexible and maintainable.
+
+eg:
+```
+---
+- name: Install and start Apache
+  hosts: webservers
+  vars:
+    package_name: httpd
+    service_name: httpd
+
+  tasks:
+    - name: Install package
+      yum:
+        name: "{{ package_name }}"
+        state: present
+
+    - name: Start service
+      service:
+        name: "{{ service_name }}"
+        state: started
+```

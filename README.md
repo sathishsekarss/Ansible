@@ -10,6 +10,8 @@ Table of contents
 8. [How to configure ansible configuration ?](#how-to-configure-ansible-configuration)
 9. [What is ansible facts ?](#what-is-ansible-facts)
 10. [Variables in ansible playbook](#variables-in-ansible-playbook)
+11. [Variable precedence in Ansible](#variables-precedence-in-ansible)
+
 
 
 ## what-is-ansible
@@ -108,3 +110,26 @@ eg:
         name: "{{ service_name }}"
         state: started
 ```
+
+## variables-precedence-in-ansible
+
+The below table illustrate the variable precedence in ansible
+| Precedence (Low → High) | Source |
+|-------------------------|--------|
+| 1 | Role defaults (`roles/<role>/defaults/main.yml`) |
+| 2 | Inventory group vars |
+| 3 | Inventory host vars |
+| 4 | Playbook `group_vars/all` |
+| 5 | Playbook `group_vars/*` |
+| 6 | Playbook `host_vars/*` |
+| 7 | Facts gathered by the setup module |
+| 8 | Play vars |
+| 9 | Play `vars_prompt` |
+| 10 | Play `vars_files` |
+| 11 | Role vars (`roles/<role>/vars/main.yml`) |
+| 12 | Block vars |
+| 13 | Task vars |
+| 14 | `include_vars` |
+| 15 | `set_fact` and registered vars |
+| 16 | Role/include params |
+| 17 | Extra vars (`ansible-playbook -e`) |

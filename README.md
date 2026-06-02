@@ -11,6 +11,7 @@ Table of contents
 9. [What is ansible facts ?](#what-is-ansible-facts)
 10. [Variables in ansible playbook](#variables-in-ansible-playbook)
 11. [Variable precedence in Ansible](#variables-precedence-in-ansible)
+12. [Loops in Ansible](#loops-in-ansible)
 
 
 
@@ -133,3 +134,19 @@ The below table illustrate the variable precedence in ansible
 | 15 | `set_fact` and registered vars |
 | 16 | Role/include params |
 | 17 | Extra vars (`ansible-playbook -e`) |
+
+## loops-in-ansible
+
+Basic example of using loops in ansible:
+```
+vars:
+  mail_services:
+    - postfix
+    - dovecot
+tasks:
+  - name: Postfix and Dovecot are running
+    ansible.builtin.service:
+      name: "{{ item }}"
+      state: started
+    loop: "{{ mail_services }}"
+```

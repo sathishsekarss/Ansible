@@ -12,6 +12,7 @@ Table of contents
 10. [Variables in ansible playbook](#variables-in-ansible-playbook)
 11. [Variable precedence in Ansible](#variables-precedence-in-ansible)
 12. [Loops in Ansible](#loops-in-ansible)
+13. [Conditional tasks in Ansible](#conditional-tasks-in-ansible)
 
 
 
@@ -149,4 +150,18 @@ tasks:
       name: "{{ item }}"
       state: started
     loop: "{{ mail_services }}"
+```
+## conditional-tasks-in-ansible
+
+Basic example of using conditional tasks in ansible.
+```
+---- name: Simple Boolean Task Demo
+  hosts: all
+  vars:
+    run_my_task: true
+  tasks:
+    - name: httpd package is installed
+      ansible.builtin.dnf:
+        name: httpd
+      when: run_my_task
 ```

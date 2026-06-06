@@ -13,6 +13,7 @@ Table of contents
 11. [Variable precedence in Ansible](#variables-precedence-in-ansible)
 12. [Loops in Ansible](#loops-in-ansible)
 13. [Conditional tasks in Ansible](#conditional-tasks-in-ansible)
+14. [Ignoring task failure in Ansible](#ignoring-task-failure-in-ansible)
 
 
 
@@ -164,4 +165,16 @@ Basic example of using conditional tasks in ansible.
       ansible.builtin.dnf:
         name: httpd
       when: run_my_task
+```
+
+## ignoring-task-failure-in-ansible
+By default, if a task fails, the play is aborted. However, this behavior can be overridden by ignoring failed tasks. You can use the ignore_errors keyword in a task to accomplish this.
+
+The below example shows how a task failure can be handled in ansible.
+```
+- name: Latest version of notapkg is installed
+  ansible.builtin.dnf:
+    name: notapkg
+    state: latest
+ignore_errors: yes
 ```

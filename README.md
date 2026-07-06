@@ -3,6 +3,7 @@ Table of contents
 1. [What is ansible ?](#what-is-ansible)
 1. [How is ansible agentless ?](#ansible-is-agentless)
 1. [How is ansible modules built?](#how-is-ansible-modules-built?)
+1. [Comments-in-ansible](#comments-in-ansible)
 1. [What is Playbooks in Ansible ?](#what-is-playbooks-in-ansible)
 1. [What is Inventories in Ansible ?](#what-is-inventories-in-ansible)
 1. [What is Ansible navigator ?](#what-is-ansible-navigator)
@@ -29,6 +30,14 @@ It only needs to installed on the control node ( main node ) where we write the 
 
 ## how-is-ansible-modules-built?
 Ansible modules are mainly built using the python.  Most of the implementations we don't have to worry about.  It's ready to use.  We just have to use the modules in the tasks section or any other sections in the ansible playbooks.
+
+## comments-in-ansible
+In ansible comments can be added to the file using '#' sign.
+
+eg:
+```
+#This is a comment
+```
 
 ## what-is-playbooks-in-ansible
 Ansible playbooks are YAML files that define a series of automation tasks to be executed on remote systems.

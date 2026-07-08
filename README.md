@@ -17,6 +17,7 @@ Table of contents
 1. [Ignoring task failure in Ansible](#ignoring-task-failure-in-ansible)
 1. [What is jinja2 in Ansible](#what-is-jinja2-in-ansible)
 1. [How is jinja2 used in Ansible](#how-is-jinja2-used-in-ansible)
+1. [Why Ansible Handlers are idempotent](#why-ansible-handlers-are-idempotent)
 
 
 
@@ -221,3 +222,9 @@ log_level = INFO
 server_ip = {{ server }}
 {% endfor %}
 ```
+
+## why-ansible-handlers-are-idempotent
+Ansible modules are designed to be idempotent. This means that if you run a playbook multiple times, the result is always the same. You can run plays and their tasks multiple times, but managed hosts are only changed if those changes are required to get the managed hosts to the desired state.
+
+In simple words, the howmany times we run the Ansible playbook, it might yeild the same results.  Unless we modify something in the playbook.
+

@@ -18,6 +18,7 @@ Table of contents
 1. [What is jinja2 in Ansible](#what-is-jinja2-in-ansible)
 1. [How is jinja2 used in Ansible](#how-is-jinja2-used-in-ansible)
 1. [Why Ansible Handlers are idempotent](#why-ansible-handlers-are-idempotent)
+1. [What is ansible tower](#what-is-ansible-tower)
 
 
 
@@ -228,3 +229,5 @@ Ansible modules are designed to be idempotent. This means that if you run a play
 
 In simple words, the howmany times we run the Ansible playbook, it might yeild the same results.  Unless we modify something in the playbook.
 
+## what-is-ansible-tower
+Ansible Tower was the enterprise web-based management platform for Ansible. It provided a graphical user interfInstead of running playbooks manually from the command line, we can run playbooks from UI. 

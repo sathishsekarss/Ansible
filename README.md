@@ -19,7 +19,7 @@ Table of contents
 1. [How is jinja2 used in Ansible](#how-is-jinja2-used-in-ansible)
 1. [Why Ansible Handlers are idempotent](#why-ansible-handlers-are-idempotent)
 1. [What is ansible tower](#what-is-ansible-tower)
-1. [Ansible sandbox environment for handson](#ansible-sandbox-environment)
+1. [Ansible sandbox environment for hands-on](#ansible-sandbox-environment)
 
 
 
@@ -234,7 +234,7 @@ In simple words, the howmany times we run the Ansible playbook, it might yeild t
 Ansible Tower was the enterprise web-based management platform for Ansible. It provided a graphical user interfInstead of running playbooks manually from the command line, we can run playbooks from UI. 
 
 ## ansible-sandbox-environment
-For ansible hands on, We can use ubuntu server installed in Virtual box as virtual machines named as controller node ( for controlling the managed node), node 1 and node 2 ( managed nodes ).
+For ansible hands-on, We can use ubuntu server installed in Virtual box as virtual machines named as controller node ( for controlling the managed node), node 1 and node 2 ( managed nodes ).
 
 ```
                          ┌─────────────────────────┐
